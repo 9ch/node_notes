@@ -1,0 +1,18 @@
+{
+  "name": "testcrawler",
+  "version": "1.0.0",
+  "description": "testcrawler",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tdy",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "superagent": "^2.3.0"
+  },
+  "devDependencies": {
+    "cheerio": "^0.22.0"
+  }
+}
