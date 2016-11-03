@@ -18,9 +18,7 @@ app.get('/',function (request,response) {
                     href : "http://cnodejs.org"+$(element).attr('href')
                 });
             });
-            globalArray = items;
             response.send(items);
         });
 });
-console.log(globalArray);
 app.listen(3000);
