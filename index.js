@@ -1,5 +1,4 @@
-var data = require('./getdata.js');
-data.then(doData);
-function doData(data){
-	console.log(data);
-}
+var data = require("./getdata");
+data.then(function(info){
+    console.log(info.length);
+});
