@@ -6,4 +6,4 @@ git clone https://github.com/9ch/node_notes.git
 cd node_notes && npm install
 node index.js
 ```
-	
+&copy; 2016.11.18 TDY
