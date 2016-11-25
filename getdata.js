@@ -1,6 +1,5 @@
 var superagent = require("superagent");
 var cheerio = require("cheerio");
-var config = require("config");
 var fs = require('fs');
 function getItems() {
     let $data = new Promise(function (resolve, reject) {//使用promise进行异步操作
