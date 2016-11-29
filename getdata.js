@@ -10,7 +10,6 @@ function getItems() {
                     return;
                 }
                 resolve(data.toString());
-                return $text;
             });
         });
         $text.then(function (data) {//读取相应内容进行筛选处理
