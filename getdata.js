@@ -32,9 +32,11 @@ function getItems() {
                 }
             })
 
-        }).then(function (date) {
+        })
+        .then(function (date) {
                 var time = new Date();
-                if((time-date) >= 1000000){
+                return new Promise(function (resolve,reject){
+                    if((time-date) >= 1000000){
                     getData().then(function (data) {
                         fs.writeFile("./config/text.html",data,function (err) {
                             if(err){
@@ -58,8 +60,9 @@ function getItems() {
                         }
                     })
                 }
-
+                });
             });
+        
         $text.then(function (data) {//读取相应内容进行筛选处理
             var $ = cheerio.load(data);
             var items = [];
@@ -85,7 +88,7 @@ function getData() {
                     reject(err);
                 }
                 else{
-                    resolve(data);
+                    resolve(data.text);
                 }
             });
     })
