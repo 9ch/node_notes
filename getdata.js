@@ -29,14 +29,16 @@ function getItems() {
                         });
                     }
                 })
-
-            }).then(function (date) {
+            })
+            .then(function (date) {
                 var time = new Date();
                 return new Promise(function (resolve, reject) {
                     if ((time - date) >= 1000000) {
                         getData().then(function (data) {
                             fs.writeFile("./config/text.html", data, function (err) {
                                 if (err) {
+                                    console.log(err);
+                                    console.log(2);
                                     reject(err);
                                 }
                                 resolve(data);
@@ -46,6 +48,8 @@ function getItems() {
                     else {
                         fs.readFile('./config/text.html', function (err, data) {
                             if (err) {
+                                console.log(err);
+                                console.log(3);
                                 reject(err);
                             }
                             else {
@@ -53,8 +57,9 @@ function getItems() {
                             }
                         })
                     }
-                })
+                });
             });
+
         $text.then(function (data) {//读取相应内容进行筛选处理
             var $ = cheerio.load(data);
             var items = [];
